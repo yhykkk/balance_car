@@ -1,0 +1,4 @@
+../Core/Src/pid.c:27:6:PID_Init	8	static
+../Core/Src/pid.c:54:7:Speed_PID_Realize	32	static
+../Core/Src/pid.c:80:5:Angle_PID_Realize	32	static
+../Core/Src/pid.c:94:6:control	16	static

@@ -1,0 +1,12 @@
+../Core/Src/mpu6050.c:7:9:MPU_Init	16	static
+../Core/Src/mpu6050.c:35:9:MPU_Set_Gyro_Fsr	16	static
+../Core/Src/mpu6050.c:43:9:MPU_Set_Accel_Fsr	16	static
+../Core/Src/mpu6050.c:51:9:MPU_Set_LPF	24	static
+../Core/Src/mpu6050.c:66:9:MPU_Set_Rate	24	static
+../Core/Src/mpu6050.c:78:7:MPU_Get_Temperature	24	static
+../Core/Src/mpu6050.c:92:9:MPU_Get_Gyroscope	32	static
+../Core/Src/mpu6050.c:108:9:MPU_Get_Accelerometer	32	static
+../Core/Src/mpu6050.c:127:9:MPU_Write_Len	24	static
+../Core/Src/mpu6050.c:158:9:MPU_Read_Len	16	static
+../Core/Src/mpu6050.c:187:9:MPU_Write_Byte	16	static
+../Core/Src/mpu6050.c:210:9:MPU_Read_Byte	24	static
