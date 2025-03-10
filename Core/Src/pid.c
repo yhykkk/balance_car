@@ -98,4 +98,11 @@ void control(float speed_target)
 	load(angle_output,angle_output);
 }
 
+void turn (float speed_target)
+{
+	speed_output=Speed_PID_Realize(&pid_speed,speed_target,encoder_sum);
+	angle_output=Angle_PID_Realize(&pid_angle,speed_output+MID,roll,gyrox);
+	load(angle_output+25,angle_output-25);
+}
+
 

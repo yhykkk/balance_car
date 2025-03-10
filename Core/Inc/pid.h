@@ -17,5 +17,6 @@ typedef struct _PID//PID参数结构体
 }PID;
 
 void control(float speed_target);
+void turn (float speed_target);
 
 #endif /* INC_PID_H_ */

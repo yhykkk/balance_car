@@ -62,6 +62,7 @@ short gyrox, gyroy, gyroz;
 int encoder_left , encoder_right;
 int encoder_sum;
 int move;
+int flag;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -81,7 +82,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	   encoder_left=encoder_read(&htim2);
 	   encoder_right=-encoder_read(&htim4);
 	   encoder_sum = encoder_left+encoder_right;
-	   control(move);
+	   if(flag==0)
+	   {
+		control(move);
+	   }
+	   else if(flag==1)
+	   {
+		turn(move);
+	   }
 	  }
 	  HAL_TIM_Base_Start_IT(&htim3);
   }
@@ -93,22 +101,44 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		  {
 		  case 0x00:
 		  {
-		      move = 0;
+		      flag = 0;
+			  move = 0;
 		      break;
 		  }
 		  case 0x01:
 		  {
-			  move = 1;
+			  flag = 0;
+			  move = 3;
 			  break;
 		  }
 		  case 0x02:
 		  {
-			  move = 2;
+			  flag = 0;
+			  move = 5;
 			  break;
 		  }
 		  case 0x03:
 		  {
+			  flag = 0;
+			  move = 7;
+			  break;
+		  }
+		  case 0x04:
+		  {
+			  flag = 1;
 			  move = 3;
+			  break;
+		  }
+		  case 0x05:
+		  {
+			  flag = 1;
+			  move = 5;
+			  break;
+		  }
+		  case 0x06:
+		  {
+			  flag = 1;
+			  move = 7;
 			  break;
 		  }
 		  }
